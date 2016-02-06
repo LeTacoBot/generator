@@ -2,6 +2,7 @@ genre_list = {}
 theme_list = {}
 genrefile = io.open("genres", "r");
 themefile = io.open("themes", "r");
+math.randomseed(os.time())
 
 for i in genrefile:lines() do
 	table.insert (genre_list, i);
