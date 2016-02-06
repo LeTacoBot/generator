@@ -20,13 +20,10 @@ idea_count = io.read()
 
 for a = 1, idea_count do
 	io.write("\n\nGenres: ")
-	
 	for b = 1, genre_count do
 		io.write(genre_list[math.random(1, #genre_list)]..", ")
 	end
-	
-	io.write("\nThemes: ")
-	
+	io.write("\nThemes: ")	
 	for b = 1, theme_count do
 		io.write(theme_list[math.random(1, #theme_list)]..", ")
 	end
