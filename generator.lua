@@ -12,22 +12,27 @@ for i in themefile:lines() do
 	table.insert (theme_list, i);
 end
 
-io.write("The Official Enough Lua Video Game Generator!\n\nNumber of genres?\n")
-genre_count = io.read()
-io.write("Number of themes?\n")
-theme_count = io.read()
-io.write("Number of ideas?\n")
-idea_count = io.read()
+if arg[1] == nil or arg[2] == nil or arg[3] == nil then
+	io.write("\nThe Official Enough Lua Video Game Generator!\n\nNumber of genres? (2 or 3 is good)\n")
+	genre_count = io.read()
+	io.write("Number of themes? (3 or 4 is sufficient)\n")
+	theme_count = io.read()
+	io.write("Number of ideas? (YOU CAN NEVER HAVE ENOUGH)\n")
+	idea_count = io.read()
+else
+	genre_count = arg[1]
+	theme_count = arg[2]
+	idea_count = arg[3]
+end
 
 for a = 1, idea_count do
-	io.write("\n\nGenres: ")
+	io.write("\nMake a game with the genres:\n")
 	for b = 1, genre_count do
 		io.write(genre_list[math.random(1, #genre_list)]..", ")
 	end
-	io.write("\nThemes: ")	
+	io.write("\n\nAnd the themes:\n")	
 	for b = 1, theme_count do
 		io.write(theme_list[math.random(1, #theme_list)]..", ")
 	end
+	io.write("\n\n--------------------\n\n")
 end
-
-io.write("\n")
